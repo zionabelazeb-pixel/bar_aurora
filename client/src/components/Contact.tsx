@@ -3,7 +3,6 @@
  * Design: Warm Trattoria Energy
  * Google Maps embed, hours table, contact info, how-to-order steps.
  */
-import { MapView } from "@/components/Map";
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
@@ -27,7 +26,6 @@ const steps = [
 ];
 
 export default function Contact() {
-  const [mapReady, setMapReady] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -85,7 +83,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Map */}
+            {/* Map — standard iframe embed, works on all deployments */}
             <div
               style={{
                 borderRadius: "12px",
@@ -95,26 +93,15 @@ export default function Contact() {
                 boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
               }}
             >
-              <MapView
-                onMapReady={(map) => {
-                  setMapReady(true);
-                  const pos = { lat: 45.4064, lng: 11.8768 };
-                  map.setCenter(pos);
-                  map.setZoom(17);
-                  new google.maps.Marker({
-                    position: pos,
-                    map,
-                    title: "Bar Aurora - Dai Chimici",
-                    icon: {
-                      path: google.maps.SymbolPath.CIRCLE,
-                      scale: 10,
-                      fillColor: "#8B0000",
-                      fillOpacity: 1,
-                      strokeColor: "white",
-                      strokeWeight: 2,
-                    },
-                  });
-                }}
+              <iframe
+                title="Bar Aurora Dai Chimici — Via Marzolo 4, Padova"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1430.4!2d11.87456!3d45.40640!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda3c6e2a6a6d%3A0x5f2c8e9b1d3a4c5e!2sBar+dai+Chimici%2C+Via+Francesco+Marzolo%2C+4%2C+35121+Padova+PD%2C+Italy!5e0!3m2!1sen!2sit!4v1712500000001!5m2!1sen!2sit"
+                width="100%"
+                height="280"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
 
