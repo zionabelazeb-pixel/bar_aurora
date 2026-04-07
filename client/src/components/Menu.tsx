@@ -229,25 +229,27 @@ function MenuModal({ onClose }: { onClose: () => void }) {
         background: "rgba(20,5,5,0.7)",
         backdropFilter: "blur(4px)",
         display: "flex",
-        alignItems: "flex-end",
+        alignItems: "center",
         justifyContent: "center",
+        padding: "clamp(1rem, 5vw, 2rem)",
       }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <motion.div
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        exit={{ y: "100%" }}
+        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 30 }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
         style={{
           background: "#FDF6EC",
-          borderRadius: "20px 20px 0 0",
+          borderRadius: "24px",
           width: "100%",
           maxWidth: "720px",
-          maxHeight: "92vh",
+          maxHeight: "90vh",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
         }}
       >
         {/* Modal header */}

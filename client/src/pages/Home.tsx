@@ -14,6 +14,7 @@ import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
 import Reviews from "@/components/Reviews";
 import WhyUs from "@/components/WhyUs";
+import HowToOrder from "@/components/HowToOrder";
 
 export default function Home() {
   return (
@@ -26,8 +27,10 @@ export default function Home() {
 
       {/* 3. Marquee Ticker */}
       <Marquee />
+      {/* 4. How To Order */}
+      <HowToOrder />
 
-      {/* 4. About + Quick Access */}
+      {/* 5. About + Quick Access */}
       <About />
 
       {/* 5. Why Us */}
