@@ -292,26 +292,30 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Subtle menu text link */}
-          <motion.a
+          {/* Subtle menu text link — centered */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            href="#menu"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            style={{
-              fontFamily: "'Open Sans', sans-serif",
-              fontSize: "0.9rem",
-              color: "rgba(253,246,236,0.7)",
-              textDecoration: "underline",
-              textUnderlineOffset: "3px",
-            }}
+            style={{ textAlign: "center" }}
           >
-            Vedi il nostro menu ↓
-          </motion.a>
+            <a
+              href="#menu"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "0.9rem",
+                color: "rgba(253,246,236,0.7)",
+                textDecoration: "underline",
+                textUnderlineOffset: "3px",
+              }}
+            >
+              Vedi il nostro menu ↓
+            </a>
+          </motion.div>
         </div>
       </div>
 
