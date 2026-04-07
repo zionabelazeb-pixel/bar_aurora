@@ -290,15 +290,8 @@ export default function Hero() {
               <Phone size={16} />
               Chiama
             </a>
-          </motion.div>
 
-          {/* Subtle menu text link — centered */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            style={{ textAlign: "center" }}
-          >
+            {/* Menu CTA */}
             <a
               href="#menu"
               onClick={(e) => {
@@ -306,14 +299,26 @@ export default function Hero() {
                 document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" });
               }}
               style={{
-                fontFamily: "'Open Sans', sans-serif",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                background: "rgba(253,246,236,0.12)",
+                color: "#FDF6EC",
+                border: "2px solid rgba(253,246,236,0.35)",
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
                 fontSize: "0.9rem",
-                color: "rgba(253,246,236,0.7)",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
+                padding: "0.875rem 1.75rem",
+                borderRadius: "9999px",
+                textDecoration: "none",
+                minHeight: "48px",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                backdropFilter: "blur(4px)",
+                transition: "all 0.2s ease",
               }}
             >
-              Vedi il nostro menu ↓
+              Menu ↓
             </a>
           </motion.div>
         </div>
